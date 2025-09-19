@@ -81,7 +81,7 @@ Both agents successfully solved the environment, achieving the target average sc
 
 |  | Standard DQN | Rainbow DQN |
 |--------|-------------|-------------|
-| Episodes to solve | 493 | 244 |
+| Episodes to solve | 534 | 257 |
 | Training time per episode | 1x | 3x |
 
 ### Plot of Rewards
@@ -89,12 +89,12 @@ Both agents successfully solved the environment, achieving the target average sc
 #### Standard DQN Training Progress
 ![DQN Training Results](dqn_training.png)
 
-The DQN agent successfully learned to solve the environment, showing the raw episode scores (light blue) and the moving average (dark blue line). **The DQN agent achieves an average score of +13 after 493 episodes** .
+The DQN agent successfully learned to solve the environment, showing the raw episode scores (light blue) and the moving average (dark blue line). 
 
 #### Rainbow DQN Training Progress
 ![Rainbow DQN Training Results](rainbow_training.png)
 
-The Rainbow DQN agent demonstrates faster learning, with the moving average reaching the target score in fewer episodes. **The Rainbow DQN achieves an average score of +13 after 244 episodes** .
+The Rainbow DQN agent demonstrates faster learning, with the moving average reaching the target score in fewer episodes. 
 
 #### Agent Comparison
 ![Agent Comparison](comparison.png)
