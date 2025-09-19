@@ -32,11 +32,7 @@ The environment is considered solved when the agent achieves an **average score 
 ### Agents Implemented
 This project includes two different DQN implementations:
 1. **Standard DQN Agent** - Classic Deep Q-Network with experience replay and target network
-2. **Rainbow DQN Agent** - Advanced DQN variant incorporating multiple improvements including:
-   - Dueling DQN architecture
-   - Prioritized Experience Replay
-   - Multi-step learning
-   - Noisy networks (replacing epsilon-greedy exploration)
+2. **Rainbow DQN Agent** - Advanced DQN variant incorporating multiple improvements including
 
 ## Getting Started
 
@@ -118,25 +114,6 @@ To train both DQN and Rainbow DQN agents and compare their performance:
    python main.py
    ```
 
-This will:
-- Train a standard DQN agent for up to 1500 episodes
-- Train a Rainbow DQN agent for up to 1500 episodes
-- Save trained model weights as `dqn_checkpoint.pth` and `rainbow_dqn_checkpoint.pth`
-- Generate training plots showing learning progress and comparison
-- Display training progress with real-time statistics
-
-### Training Parameters
-
-**Standard DQN Agent:**
-- Episodes: 1500 (max)
-- Epsilon-greedy exploration: starts at 1.0, decays to 0.01
-- Target score: 13.0 (average over 100 episodes)
-
-**Rainbow DQN Agent:**
-- Episodes: 1500 (max)
-- Uses noisy networks for exploration (no epsilon-greedy)
-- Target score: 13.0 (average over 100 episodes)
-
 ### Output Files
 
 After training, you'll find:
@@ -145,42 +122,4 @@ After training, you'll find:
 - `dqn_training.png` - DQN training progress plot
 - `rainbow_training.png` - Rainbow DQN training progress plot
 - `comparison.png` - Side-by-side comparison of both agents
-
-### Project Structure
-
-```
-navigation_dqn/
-├── main.py                     # Main training script
-├── README.md                   # This file
-├── dqn_agent/                  # Standard DQN implementation
-│   ├── __init__.py
-│   ├── agent.py               # DQN agent class
-│   └── model.py               # Neural network architecture
-├── rainbow_dqn_agent/         # Rainbow DQN implementation
-│   ├── __init__.py
-│   ├── agent.py               # Rainbow DQN agent class
-│   ├── model.py               # Dueling DQN architecture
-│   ├── fast_model.py          # Optimized model variant
-│   ├── replay_buffer.py       # Standard experience replay
-│   ├── prioritized_replay_buffer.py  # Prioritized experience replay
-│   └── multi_step_buffer.py   # Multi-step learning buffer
-└── *.png                      # Generated training plots
-```
-
-### Customizing Training
-
-You can modify training parameters in `main.py`:
-
-- `n_episodes`: Maximum number of training episodes
-- `eps_start`, `eps_end`, `eps_decay`: Epsilon-greedy parameters for DQN
-- `max_t`: Maximum timesteps per episode
-- Environment file path for different operating systems
-
-### Watching a Trained Agent
-
-To watch a trained agent perform (requires environment with visualization):
-
-1. Load the trained weights
-2. Set the environment to non-training mode
-3. Run episodes with the trained agent using greedy action selection
 
